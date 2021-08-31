@@ -37,7 +37,9 @@ knitr::opts_chunk$set(
 # Plot
 
 ```{r "plot_name", fig.width=8, fig.height=6}
-
+ggplot(mpg) + 
+  aes(x = hwy, y = cty, color = class) +
+  geom_point()
 ```
 
 
