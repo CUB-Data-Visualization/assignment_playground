@@ -1,2 +1,3 @@
-# assignment_playground
-Playground repo
+# Playground
+
+This is your visualization playground repository.
