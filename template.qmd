@@ -18,6 +18,7 @@ format:
     fig-width: 8
     fig-height: 6
     df-print: paged
+embed-resources: true
 editor: visual
 editor_options: 
   chunk_output_type: inline
