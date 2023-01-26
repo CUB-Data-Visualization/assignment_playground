@@ -1,0 +1,65 @@
+---
+title: "TITLE"
+subtitle: "SUBTITLE"
+author: "AUTHOR"
+date: "Last knitted `r format(Sys.Date(), '%d %b %Y')`"
+format: 
+  html:
+    highlight-style: dracula
+    number-sections: true
+    code-line-numbers: true
+    code-tools: true
+    code-fold: show
+    code-summary: "Show the code"
+    code-link: true
+    toc: true
+    toc-float: true
+    toc-depth: 2
+    fig-width: 8
+    fig-height: 6
+    df-print: paged
+editor: visual
+editor_options: 
+  chunk_output_type: inline
+bibliography: references.bib
+---
+
+# Setup
+
+Using `r R.version.string` , @R, and ggplot2 version `r packageVersion("ggplot2")` from the tidyverse [@tidyverse].
+
+```{r}
+#| label: setup
+#| messages: false
+
+# load packages
+library(ggplot2)
+
+# load scripts
+
+
+# global knitting options for code rendering
+knitr::opts_chunk$set(
+  dev = c("png", "pdf"), fig.keep = "all",
+  dev.args = list(pdf = list(encoding = "WinAnsi", useDingbats = FALSE)),
+  fig.path = sprintf("plots/%s_", gsub("\\.qmd", "", knitr::current_input()))
+)
+```
+
+# Plots {#sec-plots}
+
+Figure @fig-example in section @sec-plots is a work of art.
+
+## Heading 2
+
+### Heading 3
+
+```{r}
+#| label: fig-example
+#| fig-cap: Miles per gallon in city vs. highway driving for different car types.
+#| fig-width: 4
+#| fig-height: 4
+ggplot(mpg) + 
+  aes(x = hwy, y = cty, color = class) +
+  geom_point()
+```

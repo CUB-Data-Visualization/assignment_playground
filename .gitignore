@@ -36,6 +36,7 @@ packrat/lib*/
 packrat/src/
 
 # exclude Python and Jupyter temp files
+template_files/
 .ipynb_checkpoints
 *.pyc
 
