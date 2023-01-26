@@ -2,7 +2,7 @@
 title: "TITLE"
 subtitle: "SUBTITLE"
 author: "AUTHOR"
-date: "Last knitted `r format(Sys.Date(), '%d %b %Y')`"
+date: "`r format(Sys.Date(), '%d %b %Y')`"
 format: 
   html:
     highlight-style: dracula
