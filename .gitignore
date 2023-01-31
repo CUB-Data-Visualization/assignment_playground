@@ -13,6 +13,9 @@
 *.xlsx
 *.csv
 
+# explicitly allow data files (by default)
+!data/**/*
+
 # OS generated files
 .DS_Store
 .DS_Store?
@@ -36,15 +39,11 @@ packrat/lib*/
 packrat/src/
 
 # exclude Python and Jupyter temp files
-template_files/
 .ipynb_checkpoints
 *.pyc
 
 # exclude authentication tokens
 .httr-oauth
-
-# explicitly allow all files in data (by default)
-!data/**/*
 
 # exclude cache
 *cache/**/*
