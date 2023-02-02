@@ -17,7 +17,7 @@ format:
     toc-depth: 2
     fig-width: 8
     fig-height: 6
-    df-print: paged
+    df-print: tibble
 embed-resources: true
 editor: visual
 editor_options: 
