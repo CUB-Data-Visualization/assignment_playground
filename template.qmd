@@ -3,26 +3,43 @@ title: "TITLE"
 subtitle: "SUBTITLE"
 author: "AUTHOR"
 date: "`r format(Sys.Date(), '%d %b %Y')`"
+# universal output options
+number-sections: true
+number-offset: 0
+toc: true
+toc-depth: 2
+fig-width: 6
+fig-height: 4
+df-print: tibble
+embed-resources: true
+# format specific output options
 format: 
-  html:
+  # html file
+  html: 
     highlight-style: dracula
-    number-sections: true
-    code-line-numbers: true
     code-tools: true
     code-fold: show
     code-summary: "Show the code"
-    code-link: true
-    toc: true
+    code-line-numbers: true
+    code-link: true # only works if code-line-numbers: false
     toc-float: true
-    toc-depth: 2
-    fig-width: 8
-    fig-height: 6
-    df-print: tibble
-embed-resources: true
+  # word file
+  docx: 
+    toc-title: "Table of contents"
+    fig-dpi: 600
+    execute:
+      echo: false
+# bibliography and cross-references
+bibliography: references.bib
+csl: gpl.csl # find your preferred style at https://www.zotero.org/styles
+crossref:
+  fig-prefix: Fig.
+  tbl-prefix: Table
+  ref-hyperlink: true
+# rstudio editor options
 editor: visual
 editor_options: 
   chunk_output_type: inline
-bibliography: references.bib
 ---
 
 # Setup
@@ -49,7 +66,7 @@ knitr::opts_chunk$set(
 
 # Plots {#sec-plots}
 
-Figure @fig-example in section @sec-plots is a work of art.
+@fig-example in section @sec-plots is a work of art.
 
 ## Heading 2
 
@@ -58,9 +75,25 @@ Figure @fig-example in section @sec-plots is a work of art.
 ```{r}
 #| label: fig-example
 #| fig-cap: Miles per gallon in city vs. highway driving for different car types.
-#| fig-width: 4
-#| fig-height: 4
+#| fig-width: 7
+#| fig-height: 3
 ggplot(mpg) + 
   aes(x = hwy, y = cty, color = class) +
   geom_point()
 ```
+
+# Tables
+
+My @tbl-example is even more amazing.
+
+```{r}
+#| label: tbl-example
+#| tbl-cap: This is my happy table, even has a beautiful equation $x^2 - \alpha$ 
+#| tbl-cap-location: top
+knitr::kable(head(mpg))
+```
+
+# References
+
+::: {#refs}
+:::
