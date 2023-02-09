@@ -48,7 +48,7 @@ Using `r R.version.string` , @R, and ggplot2 version `r packageVersion("ggplot2"
 
 ```{r}
 #| label: setup
-#| messages: false
+#| message: false
 
 # load packages
 library(ggplot2)
