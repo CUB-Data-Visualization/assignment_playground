@@ -64,6 +64,12 @@ knitr::opts_chunk$set(
 )
 ```
 
+# Data
+
+```{r}
+# load data
+```
+
 # Plots {#sec-plots}
 
 @fig-example in section @sec-plots is a work of art.
